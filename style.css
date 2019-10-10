@@ -7,191 +7,95 @@
 .steel-gray {color: #43464B}
 .light-gray {color: #EEF0F0}
 .gold {color: #FFAF44}
+.saddle-brown {color: #855E42}
 
-body, html {
-  font-family: Arial, Helvetica, sans-serif;
-  font-family: 'Lato', sans-serif;
-  margin: 0;
+body, html {font-family:'Lato',sans-serif; margin:0}
+a, button {cursor:pointer}
+a {text-decoration:none; list-style:none; color:#000}
+/* a:hover {text-decoration:underline} */
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@font-face { font-family: Dimitri; src: url('font/dimitri/DIMITRI_.TTF'); } 
-
+@font-face {font-family: Dimitri; src: url('font/dimitri/DIMITRI_.TTF')} 
 .logo {
-  font-family: 'Dimitri', sans-serif;
+  font-family: 'Dimitri';
   font-size: 3em;
   color: #855E42;
   text-shadow: 2px 5px 0 #F4AF6D;
 }
-
-a, button {
-  cursor: pointer;
-}
-
-* {
-  /* outline: red 1px dashed; */
-}
-
-.flexContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-a {
-  text-decoration: none;
-  list-style: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.flexContainer a {
-  color: #000;
-}
-
+/* START HEADER+NAV */
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #fff;
   z-index: 10;
-
+  background-color: #fff;
+  height: 70px;
+  justify-content: space-between;
 }
+.invisible {visibility: hidden}
+.accountMenu img {height: 20px}
+.avatar {display: none;}
+header a {padding: 10px}
+header a:hover{background:#855E42}
 
-.accountMenu {
-  margin-left: auto;
-  justify-content: flex-end;
-  /* padding-right: 30px; */
-}
-
-.title {
-  justify-items: center;
-  flex-grow: 1;
-  /* justify-content: center; */
-  text-align: center;
-  /* width: 100%; */
-  height: 50px;
-  margin: 10px 0;
-}
-
-.title img {
-  height: 100%;
-}
-
-header a {
-  padding: 10px;
-}
-
-.accountMenu a img {
-  height: 20px;
-}
-
-.cart {
-  padding-right: 3px;
-}
-
-.bust {
-  padding-bottom:12px;
-}
-
-/*PADDING POD STICKY MENU - ZMIEŃ WRAZ Z WIELKOŚCIĄ EKRANU?*/
 nav {
   padding-top: 70px;
-}
-
-.shopMenu {
-  justify-content: center;
   background-color: #855E42;
   text-transform: uppercase;
 }
-
-.shopMenu a {
+nav a {
   padding: 10px 20px;
   color: #fff;
 }
-
-.globe, .phone, .bust {
-  display: none;
-}
+nav a:hover{background:#221812}
 
 @media only screen and (max-width: 800px) {
-  .globe, .phone, .bust {
-    display: flex;
-  }
-  .en, .pl, .contact, .register, .login {
-    display: none;
-  }
-
-  .shopMenu a {
-    padding: 10px 6px;
-  }
+  .avatar {display: flex}
+  .register, .login {display: none}
+  nav a {padding: 10px 6px}
 }
+/* END HEADER+NAV */
 
-.ad {
-  display: grid;
-  justify-content: center;
-}
-
-.ad img {
-  max-width: 100%;
-}
-
-.galleryCarousel {
-  padding: 20px 0;
+/* NAV-GALLERY */
+.nav-gallery {
+  margin: 50px 0;
   text-align: center;
 }
-
-.picAndButtonContainer {
+.picnbutt {
   position: relative;
-  z-index: -10;
-}
-
-.galleryCarousel .picAndButtonContainer a img {
-  width: 20%;
-  max-width: 280px;
   margin: 0 10px;
 }
-
-.picButtons {
+.picnbutt button {
   position: absolute;
-  top: -200%;
+  top: -50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 
   letter-spacing: 1px;
-  background-color: transparent;
+  background-color: #855E42;
   border: 1px #fff solid;
   color: #fff;
   padding: 5px 15px;
   font-size: 1.1em;
-  font-weight: 560;
+  font-weight: 900;
   text-transform: uppercase;
 }
-
-@media only screen and (max-width: 800px) {
-  .galleryCarousel {
-    display: none;
-  }
-  .picButtons {
-    z-index: 9;
-  }
+.picnbutt button:hover {
+  background-color: #221812;
+  color: #fff;
+  border: 2px solid #fff;
 }
-
-@media only screen and (min-width: 800px) {
-  .your-class, .slick-list, .draggable {
-    display: none !important;
-  }
+.picnbutt img {
+  width: 20%;
+  max-width: 280px;
 }
-
-.your-class {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.your-class span a img {
-  width: 100%;
-}
+@media screen and (max-width: 1000px){.picnbutt button{padding:5px 5px}}
 
 /* POLECANE */
 .polecanePasek {
