@@ -1,0 +1,24 @@
+.badge-sale, .badge-bestseller, .badge-new {
+  position: absolute;
+  align-self: flex-end;
+  z-index: 8;
+
+  padding: 5px 10px;
+  background: #800000;
+  color: #fdb9c8;
+}
+
+.badge-bestseller {
+  background: #f9812a;
+  color: #eedc82;
+}
+
+.badge-new {
+  background: #0b6623;
+  color: #c7ea46;
+}
+
+/* <!-- <div class='badge-sale'>sale</div> -->
+<!-- <div class='badge-bestseller'>bestseller</div> -->
+<!-- <div class='badge-new'>new</div> -->
+<!-- <span class='stara-cena'>160,-</span> --> */
