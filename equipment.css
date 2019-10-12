@@ -1,0 +1,91 @@
+*{outline:1px dashed #000}
+.product-container{background:#b72222}
+
+.prod-advantages{background:#d94343}
+.prod-adv-el{background:#ff9494}
+
+.prod-pics{background:#d97f43}
+.prod-pic-el{background:#ffbe94}
+
+.prod-description{background:green}
+.desc-el{background:#694c8c}
+.desc-box-el{background:#9784ad}
+
+.buy-box-el{background:#b5a8c4}
+
+.additional-table{background:#959088}
+.add-table-el{background:#d8f809}
+.stats-el{background:#ffb528}
+
+.galleries{background:#18df7a}
+.gal-el{background:#59bd8a}
+
+
+@media screen and (min-width:1100px){
+  .main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .prod-advantages{grid-column:span 2}
+}
+@media screen and (min-width:1500px){
+  .main-container{
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+  }
+  .prod-advantages{
+    grid-row:1/2;
+    grid-column:1/2
+  }
+}
+.prod-advantages {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+}
+
+.pic-gallery {display:none}
+.prod-pics {
+  display: flex;
+  flex-direction: column;
+  /* text-align:center; */
+}
+.pic-tags {justify-self: flex-start}
+@media screen and (min-width:700px){
+   .pic-nav {grid-area: pic-nav}
+   .pic-gallery {
+     grid-area: pic-gallery;
+     display: grid;
+     justify-items: end;
+  }  
+   .pic-main {grid-area: pic-main}
+   .pic-tags {grid-area: pic-tags}
+   .prod-pics {
+     display: grid;
+     grid-template-columns: 1fr 3fr 3fr;
+     grid-template-rows: 1fr 3fr 3fr 1fr;
+     grid-template-areas: 
+       ". pic-nav ."
+       "pic-gallery pic-main pic-main"
+       ". pic-main pic-main"
+       ". pic-tags .";
+   }
+}
+.color-qty {display:flex}
+.qty {margin-left: 50%}
+.desc-box-stats {display: flex}
+
+.buy-box-el:nth-of-type(1){grid-area:price}
+.buy-box-el:nth-of-type(2){grid-area:buybutton}
+.buy-box-el:nth-of-type(3){grid-area:shipment-cost}
+.buy-box {
+  margin: 0 auto;
+  padding: 1em;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "price buybutton"
+    "shipment-cost shipment-cost";
+  gap: 1em;
+}

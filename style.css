@@ -1,6 +1,6 @@
 body, html {font-family:'Lato',sans-serif; margin:0}
 a, button {cursor:pointer}
-a {text-decoration:none; list-style:none}
+a {text-decoration:none; list-style:none; color: #221812}
 
 .flexContainer {
   display: flex;
@@ -28,8 +28,9 @@ a {text-decoration:none; list-style:none}
 .invisible {visibility: hidden}
 .accountMenu img {height: 20px}
 .avatar {display: none;}
-header a {padding: 10px; color: #512a0e}
-header a:hover{background:#d6b095}
+header a {padding: 10px}
+header a:hover{background:#855E42; outline: 1px solid #221812}
+
 
 nav {
   padding-top: 70px;
@@ -75,7 +76,7 @@ nav a:hover{background:#221812}
 .picnbutt button:hover {
   background-color: #221812;
   color: #fff;
-  border: 2px solid #fff;
+  outline: 1px solid #fff;
 }
 .picnbutt img {
   width: 20%;
@@ -126,7 +127,7 @@ nav a:hover{background:#221812}
   position: relative;
 }
 .product:hover {transform: scale(1.2)}
-/* HEARTS */
+/* hearts */
 .heart {
   height: 18px;
   position: absolute;
@@ -214,10 +215,12 @@ h4 {
     font-size: 0.9em;
   }
 }
-.grid-pic {width: 100%;}
+.grid-pic {width: 100%}
 .hero-description{font-size: 0.8em;font-style: italic;color:#221812}
-.grid-element{position: relative}
+.grid-element{position: relative; transition: transform .3s}
+.heroBox{position: relative}
 .grid-element a:hover {text-decoration: underline}
+.grid-element:not(.grid-big-img):hover {transform: scale(1.07)}
 .grid-big-img img {
   height:100%;
   object-fit: cover;
@@ -311,15 +314,10 @@ Footer {
   font-weight: 900;
   color: #221812;
 }
-.footerColumn span {
-  line-height: 140%;
-}
-.serious {
-  text-decoration: underline;
-}
-@media screen and (max-width: 1000px) {
-  .strip {margin: 20px 100px 20px 100px;}
-}
+.footerColumn a {color: #CDBDB1}
+.footerColumn span {line-height: 140%}
+.serious {text-decoration: underline}
+@media screen and (max-width: 1000px) {.strip {margin: 20px 100px 20px 100px;}}
 @media screen and (max-width: 700px) {
   .footerContainer {display: grid;}
   .footerColumn img {width: 250px;}
