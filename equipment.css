@@ -1,31 +1,29 @@
 *{outline:1px dashed #000}
-.product-container{background:#b72222}
-
+/* .product-container{background:#b72222}
 .prod-advantages{background:#d94343}
 .prod-adv-el{background:#ff9494}
-
 .prod-pics{background:#d97f43}
 .prod-pic-el{background:#ffbe94}
-
 .prod-description{background:green}
 .desc-el{background:#694c8c}
 .desc-box-el{background:#9784ad}
-
 .buy-box-el{background:#b5a8c4}
-
 .additional-table{background:#959088}
 .add-table-el{background:#d8f809}
 .stats-el{background:#ffb528}
-
 .galleries{background:#18df7a}
-.gal-el{background:#59bd8a}
+.gal-el{background:#59bd8a} */
 
-
+* {
+  text-transform: uppercase;
+  color: #221812;
+}
+.main-container {margin: 1em 0}
 @media screen and (min-width:1100px){
   .main-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    /* grid-template-rows: 1fr; */
   }
   .prod-advantages{grid-column:span 2}
 }
@@ -44,6 +42,7 @@
   grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
 }
 
+.pic-nav {display: flex}
 .pic-gallery {display:none}
 .prod-pics {
   display: flex;
@@ -51,29 +50,66 @@
   /* text-align:center; */
 }
 .pic-tags {justify-self: flex-start}
-@media screen and (min-width:700px){
+.pic-main {
+  width:300px;
+  height:300px;
+  margin: 0 auto;
+}
+@media screen and (min-width:600px){
    .pic-nav {grid-area: pic-nav}
    .pic-gallery {
-     grid-area: pic-gallery;
-     display: grid;
-     justify-items: end;
+     grid-area: pic-gallery;   
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
   }  
-   .pic-main {grid-area: pic-main}
+   .pic-main {
+     grid-area: pic-main;
+     width:400px;
+     height:400px;
+     margin: 0;
+    }
    .pic-tags {grid-area: pic-tags}
    .prod-pics {
      display: grid;
      grid-template-columns: 1fr 3fr 3fr;
-     grid-template-rows: 1fr 3fr 3fr 1fr;
+     grid-template-rows: 1.5em 1fr 1fr 2em;
      grid-template-areas: 
-       ". pic-nav ."
+       ". pic-nav pic-nav"
        "pic-gallery pic-main pic-main"
-       ". pic-main pic-main"
+       "pic-gallery pic-main pic-main"
        ". pic-tags .";
    }
 }
+/* DESCRIPTION BOX LAYOUT */
+.desc-main-stats img {
+  grid-area: sword;
+  height:56px;
+  width:56px;
+}
+.desc-main-stats:nth-of-type(2) {grid-area: damage}
+.desc-main-stats:nth-of-type(3) {grid-area: damageqty}
+.desc-main-stats:nth-of-type(4) {grid-area: speed}
+.desc-main-stats:nth-of-type(5) {grid-area: speedqty}
+.desc-main-stats:nth-of-type(6) {grid-area: wielding}
+.desc-main-stats:nth-of-type(7) {grid-area: wieldingtype}
+.desc-box-stats{
+  display: grid;
+  grid-template-columns: 56px auto 1fr;
+  grid-template-rows: 1.4em 1.4em 1.4em;
+  /* background: yellow; */
+  grid-template-areas: 
+    "sword damage damageqty"
+    "sword speed speedqty"
+    "sword wielding wieldingtype"
+}
+.desc-main-stats {
+  margin-left: 1em;
+  /* border-bottom:1px solid #221812; */
+}
 .color-qty {display:flex}
 .qty {margin-left: 50%}
-.desc-box-stats {display: flex}
+/* .desc-box-stats {display: flex} */
 
 .buy-box-el:nth-of-type(1){grid-area:price}
 .buy-box-el:nth-of-type(2){grid-area:buybutton}
@@ -88,4 +124,65 @@
     "price buybutton"
     "shipment-cost shipment-cost";
   gap: 1em;
+}
+
+.infobox {margin-top:1em}
+.unfold {display:none}
+@media screen and (min-width:1100px){
+  .add-table-top-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .unfold {display:block}
+}
+.gal-heroes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (min-width: 700px) {
+  .gal-heroes {
+    display: flex;
+    justify-content: space-around;
+  }
+  .grid-element:nth-of-type(5), .grid-element:nth-of-type(6) {display: none}
+}
+@media screen and (min-width: 1100px) {
+  .grid-element:nth-of-type(5), .grid-element:nth-of-type(6) {display: block}
+}
+/* LAYOUT END */
+
+/* PICTURE CONTAINER */
+/* nav style */
+.pic-nav-el {
+  margin-right:0.7em;
+  color:lightgrey;
+  font-size: .9em;
+  margin-bottom: 0.3em;
+}
+.pic-nav-el::before{
+  content: "\203A";
+  margin-right:0.2em
+}
+/* main picture style */
+.pic-main {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background: lightgray;
+}
+/* side gallery style */
+.pic-gallery-el {width:40px; height:40px; margin:0 2px 2px 0}
+/* tag style*/
+.tag {
+  background: gray;
+  padding: 2px 10px 5px 10px;
+  text-transform: lowercase;
+  border-radius: 10px;
+  color: #fff;
+  margin:2px;
+  display:inline-block;
+}
+/* DESCRIPTION CONTAINER */
+.desc-box-name {
+  letter-spacing: 0.1em;
 }
