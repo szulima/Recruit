@@ -1,4 +1,4 @@
-*{outline:1px dashed #000}
+/* *{outline:1px dashed #000} */
 /* .product-container{background:#b72222}
 .prod-advantages{background:#d94343}
 .prod-adv-el{background:#ff9494}
@@ -97,7 +97,6 @@
   display: grid;
   grid-template-columns: 56px auto 1fr;
   grid-template-rows: 1.4em 1.4em 1.4em;
-  /* background: yellow; */
   grid-template-areas: 
     "sword damage damageqty"
     "sword speed speedqty"
@@ -117,13 +116,14 @@
 .buy-box {
   margin: 0 auto;
   padding: 1em;
-  width: 80%;
+  /* width: 80%; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "price buybutton"
     "shipment-cost shipment-cost";
   gap: 1em;
+  text-align: center;
 }
 
 .infobox {margin-top:1em}
@@ -183,6 +183,82 @@
   display:inline-block;
 }
 /* DESCRIPTION CONTAINER */
-.desc-box-name {
-  letter-spacing: 0.1em;
+.desc-box-el {margin-bottom: 1em}
+.desc-box-name {letter-spacing: 0.1em}
+.value {
+  font-weight:600;
+  /* text-transform: lowercase */
 }
+.desc-box-size-table, .color-table, .qty-table {
+  display: flex;
+  margin-top: 0.6em;
+}
+.size {
+  padding: 0.5em;
+  margin-right: 1em;
+  border: 1px solid lightgray;
+}
+.size:hover {background: #221812; color:#fff}
+.color-table-el {
+  padding: 1em;
+  margin-right: 1em;
+}
+.color-table-black {background:#221812}
+.color-table-brown {
+  background:#855E42;
+  position: relative;
+  outline: 1px solid #000;
+}
+.color-table-other {background:brown}
+.color-table-el:hover {
+  /* transform: translateY(-2px); */
+  outline: 1px solid #000;
+}
+.color-table-brown::after {
+  background-image:  url(pic/icon/pixel-triangle.svg);
+  background-size: 8px 8px;
+  width: 8px; 
+  height: 8px;
+  content:'';
+  position: absolute;
+  top:-8px;
+  left:.8em;
+}
+.qty-table-el {
+  width:30px;
+  height:30px;
+  border:1px solid lightgray;
+  display:grid;
+  justify-items:center;
+  align-items:center;
+}
+.qty-table-el-change {cursor:pointer}
+.qty-table-el-change:hover {background:gray; color:#fff}
+.prod-description, .additional-table{margin-left: 1em; margin-right:1em}
+.buy-box {
+  border:1px solid lightgray;
+  border-radius: 10px;
+  
+}
+.buy-box-el-price {
+  font-size:1.8em;
+  /* color: yellow; */
+  /* text-shadow:2px 2px 0 #000; */
+  font-weight:600;
+}
+.buy-box-el-price::before{
+  content: url(pic/Gold_Piece_IMISC0700000_Item_icon_BG1.png);
+}
+.gold-icon {
+  width:1em;
+  height:1em;
+}
+.buy-box-el-buy {
+  background: gray;
+  color:#fff;
+  display:grid;
+  justify-items:center;
+  align-items:center;
+  margin: 0 3em;
+}
+.buy-box-el-shipment {color:gray}
